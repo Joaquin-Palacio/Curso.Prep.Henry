@@ -10,14 +10,14 @@ function mayuscula(nombre) {
 function invocarCallback(cb) {
   // Invoca al callback `cb`
   //Tu código:
-  cb();
+  return cb();
 }
 
 function operacionMatematica(n1, n2, cb) {
   //Vamos a recibir una función que realiza una operación matemática como callback junto con dos números.
   //Devolver el callback pasándole como argumentos los números recibidos.
   //Tu código:
-   return cb(n1, n2);
+  return cb(n1, n2);
 }
 
 function sumarArray(numeros, cb) {
@@ -27,26 +27,18 @@ function sumarArray(numeros, cb) {
   //Tu código:
   let suma = 0;
   for (let i = 0; i < numeros.length; i++){
-    suma = suma + numeros[i] 
+      suma = suma + numeros[i];
   }
-    /*let suma = numeros.reduce(function(acumulador, valorActual){  //reduce es mas complejo.
-      return acumulador + valorActual;
-    })*/
-
-    cb(suma);
+  cb(suma);
 }
 
 function forEach(array, cb) {
   // Itera sobre la matriz "array" y pasa los valores al callback uno por uno
   // Pista: Estarás invocando a `cb` varias veces (una por cada valor en la matriz)
   //Tu código:
-  for (let i = 0; i < array.length; i++){
+  for (var i = 0; i < array.length; i++){
     cb(array[i]);
   }
-
-  //array.forEach(function(elemento){
-  // cb(elemento);  
- // })
 }
 
 function map(array, cb) {
@@ -56,8 +48,8 @@ function map(array, cb) {
   //Tu código:
   var nuevoArray = array.map(function(elemento){
     return cb(elemento);
-  })                          // map lo que hace es devolver nuevoArray donde la funcion que
-    return nuevoArray;        // le pase va a ir modificando cada elemento del array.
+  });
+  return nuevoArray;
 }
 
 function filter(array) {
@@ -65,17 +57,12 @@ function filter(array) {
   //Devolver un nuevo array con los elementos que cumplen la condición
   //Tu código:
   var nuevoArray = [];
-  for (let i = 0; i < array.length; i++){
-    if (array[i][0] === 'a'){
-      nuevoArray.push(array[i]);
+  for(let i = 0; i<array.length; i++) {
+    if(array[i][0] === "a") {
+      nuevoArray.push(array[i])
     }
   }
   return nuevoArray;
-
-
-  /*return array.filter(function(palabra){
-    return palabra[0] === 'a';                     //filter si es true lo agrega si es false no. necesita una condicion
-  })*/
 }
 
 // No modificar nada debajo de esta línea
