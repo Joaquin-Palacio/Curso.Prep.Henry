@@ -4,13 +4,13 @@ function mayuscula(nombre) {
   //La función recibe un nombre y debe devolver el mismo que recibe pero con su primer letra en mayúscula
   //ej: Recibe "mario" ----> Devuelve "Mario"
   //Tu código:
-  return nombre[0].toUpperCase() + nombre.slice(1);
+  return nombre.charAt(0).toUpperCase() + nombre.slice(1);
 }
 
 function invocarCallback(cb) {
   // Invoca al callback `cb`
   //Tu código:
-  return cb();
+  cb();
 }
 
 function operacionMatematica(n1, n2, cb) {
@@ -25,9 +25,10 @@ function sumarArray(numeros, cb) {
   // Pasa el resultado a `cb`
   // No es necesario devolver nada
   //Tu código:
-  let suma = 0;
-  for (let i = 0; i < numeros.length; i++){
-      suma = suma + numeros[i];
+  var numeros = [1,2,3,4,5];
+  var suma = 0;
+  for (var i = 0; i < numeros.length; i++){
+    suma = suma + numeros[i];
   }
   cb(suma);
 }
@@ -57,9 +58,9 @@ function filter(array) {
   //Devolver un nuevo array con los elementos que cumplen la condición
   //Tu código:
   var nuevoArray = [];
-  for(let i = 0; i<array.length; i++) {
-    if(array[i][0] === "a") {
-      nuevoArray.push(array[i])
+  for(let i = 0; i < array.length; i++) {
+    if (array[i][0] === "a") {
+       nuevoArray.push(array[i])
     }
   }
   return nuevoArray;
