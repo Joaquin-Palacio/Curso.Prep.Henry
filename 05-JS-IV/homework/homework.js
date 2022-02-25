@@ -6,14 +6,14 @@ function crearGato(nombre, edad) {
   // Agrega un método (funcion) llamado "meow" que devuelva el string "Meow!"
   // Devuelve el objeto
   // Tu código:
-  let gatito = {
+  const nuevoGato = {
     nombre: nombre,
     edad: edad,
     meow: function(){
-      return 'Meow!';
+      return 'Meow!'
     }
   }
-  return gatito;
+  return nuevoGato;
 }
 
 
@@ -54,12 +54,12 @@ function nuevoUsuario(nombre, email, password) {
   // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
   // Devuelve el objeto
   // Tu código:
-  let obj = {
+  const newuser = {
     nombre: nombre,
     email: email,
     password: password,
   }
-  return obj;
+  return newuser;
 }
 
 function tieneEmail(usuario) {
@@ -68,9 +68,7 @@ function tieneEmail(usuario) {
   // Tu código:
   if (usuario['email']){
     return true;
-  } else {
-    return false;
-  }
+  } return false;
 }
 
 
@@ -82,9 +80,7 @@ function tienePropiedad(objeto, propiedad) {
   // Tu código:
   if (objeto[propiedad]){
     return true;
-  } else{
-    return false;
-  }
+  } return false;
 }
 
 function verificarPassword(usuario, password) {
@@ -105,7 +101,7 @@ function actualizarPassword(usuario, nuevaPassword) {
   // Tu código:
   usuario.password = nuevaPassword;
   return usuario;
-}
+} 
 
 function agregarAmigo(usuario, nuevoAmigo) {
   // "usuario" tiene una propiedad llamada "amigos" que es un array
@@ -121,7 +117,7 @@ function pasarUsuarioAPremium(usuarios) {
   // Cada objeto "usuario" tiene la propiedad "esPremium"
   // Define cada propiedad "esPremium" de cada objeto como "true"
   // Devuelve el array de usuarios
-  // Tu código:
+  // Tu código: 
   for (var i = 0; i < usuarios.length; i++){
     usuarios[i].esPremium = true;
   }
@@ -153,7 +149,7 @@ function agregarMetodoCalculoDescuento(producto) {
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
   producto.calcularPrecioDescuento = function(){
-    return this.precio - (this.precio * this.porcentajeDeDescuento);
+     return producto.precio - (producto.precio * producto.porcentajeDeDescuento);
   }
   return producto;
 }
