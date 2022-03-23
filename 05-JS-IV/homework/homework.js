@@ -6,14 +6,14 @@ function crearGato(nombre, edad) {
   // Agrega un método (funcion) llamado "meow" que devuelva el string "Meow!"
   // Devuelve el objeto
   // Tu código:
-  const nuevoGato = {
+  var objeto = {
     nombre: nombre,
     edad: edad,
-    meow: function(){
-      return 'Meow!'
+    meow: function() {
+      return 'Meow!';
     }
-  }
-  return nuevoGato;
+  };
+  return objeto;
 }
 
 
@@ -38,7 +38,8 @@ function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
   // "objetoMisterioso" tiene una propiedad llamada "numeroMisterioso"
   // Multiplica el numeroMisterioso por 5 y devuelve el producto
   // Tu código:
-  return objetoMisterioso.numeroMisterioso * 5;
+  var result = objetoMisterioso.numeroMisterioso * 5;
+  return result;
 }
 
 function eliminarPropiedad(objeto, unaPropiedad) {
@@ -54,12 +55,12 @@ function nuevoUsuario(nombre, email, password) {
   // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
   // Devuelve el objeto
   // Tu código:
-  const newuser = {
+  const NuevoObjeto = {
     nombre: nombre,
     email: email,
     password: password,
   }
-  return newuser;
+  return NuevoObjeto;
 }
 
 function tieneEmail(usuario) {
@@ -68,7 +69,9 @@ function tieneEmail(usuario) {
   // Tu código:
   if (usuario['email']){
     return true;
-  } return false;
+  } else {
+    return false;
+  }
 }
 
 
@@ -80,7 +83,9 @@ function tienePropiedad(objeto, propiedad) {
   // Tu código:
   if (objeto[propiedad]){
     return true;
-  } return false;
+  } else {
+    return false;
+  }
 }
 
 function verificarPassword(usuario, password) {
@@ -148,8 +153,8 @@ function agregarMetodoCalculoDescuento(producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
-  producto.calcularPrecioDescuento = function(){
-     return producto.precio - (producto.precio * producto.porcentajeDeDescuento);
+  producto.calcularPrecioDescuento = function() {
+    return this.precio - (this.precio * this.porcentajeDeDescuento);
   }
   return producto;
 }
