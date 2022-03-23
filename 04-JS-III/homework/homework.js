@@ -7,6 +7,7 @@ function devolverPrimerElemento(array) {
 }
 
 
+
 function devolverUltimoElemento(array) {
   // Devuelve el último elemento de un array
   // Tu código:
@@ -26,11 +27,10 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
-  let nuevoArray = [];
-  for (let i = 0; i < array.length; i++){
+  var nuevoArray = [];
+  for (var i = 0; i < array.length; i++){
     nuevoArray[i] = array[i] + 1;
-  }
-  return nuevoArray;
+ } return nuevoArray; 
 }
 
 
@@ -80,9 +80,9 @@ function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
-  let suma = 0;
-  for (let i = 0; i < numeros.length; i++){
-    suma = suma + numeros[i];
+  var suma = 0;
+  for (var i = 0; i < numeros.length; i++){
+    suma += numeros[i];
   }
   return suma;
 }
@@ -100,13 +100,13 @@ function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande
   // Tu código: 
-  let mayor = numeros[0];
-  for (let i = 1; i < numeros.length; i++){
+  var mayor = numeros[0];
+  for (var i = 1; i < numeros.length; i++){
     if (numeros[i] > mayor){
       mayor = numeros[i]
     }
   }
-  return mayor; 
+  return mayor;
 }
 
 
@@ -126,8 +126,8 @@ function multiplicarArgumentos() {
 function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
-  let contador = 0;
-  for (let i = 0; i < arreglo.length; i++){
+  var contador = 0;
+  for (var i = 0; i < arreglo.length; i++){
     if (arreglo[i] > 18){
       contador++;
     }
@@ -143,7 +143,7 @@ function diaDeLaSemana(numeroDeDia) {
   //Escribe tu código aquí   
   if (numeroDeDia === 1 || numeroDeDia === 7){
     return 'Es fin de semana';
-  } else{
+  } else if (numeroDeDia < 7 && numeroDeDia > 1){
     return 'Es dia Laboral';
   }
 }
@@ -166,8 +166,8 @@ function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí  
-  for (var i =0 ; i < arreglo.length - 1; i++) {
-    if(arreglo[i] !== arreglo[i+1]){
+  for (var i = 0; i < arreglo.length - 1; i++){
+    if (arreglo[i] !== arreglo[i+1]){
       return false;
     }
   }
@@ -180,17 +180,16 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
-  var meses = [];
+  var newArray = [];
   for (var i = 0; i < array.length; i++){
     if (array[i] === 'Enero' || array[i] === 'Marzo' || array[i] === 'Noviembre'){
-      meses.push(array[i]);
+      newArray.push(array[i]);
     }
   }
-  if (meses.length < 3){
+  if (newArray.length < 3){
     return 'No se encontraron los meses pedidos';
-  } else {
-    return meses;
   }
+  return newArray;
 }
 
 
@@ -199,10 +198,10 @@ function mayorACien(array) {
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
   var mayorA100 = [];
-  for (var i = 0; i < array.length; i++){
+  for (let i = 0; i < array.length; i++){
     if (array[i] > 100){
       mayorA100.push(array[i]);
-    }
+    } 
   }
   return mayorA100;
 }
@@ -216,20 +215,21 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
-  var array = [];
+  var arrayNuevo = [];
   var suma = numero;
   for (var i = 0; i < 10; i++){
     suma = suma + 2;
     if (suma === i) break;
     else {
-      array.push(suma);
+      arrayNuevo.push(suma);
     }
   }
   if (i < 10){
-    return 'Se interrumpió la ejecución';
+    return 'Se interrumpió la ejecución'
   } else {
-    return array;
+    return arrayNuevo;
   }
+   
 }
 
 
@@ -245,7 +245,7 @@ function continueStatement(numero) {
   for (var i = 0; i < 10; i++){
     if (i === 5) continue;
     else {
-      suma = suma +2;
+      suma = suma + 2;
       array.push(suma);
     }
   }
